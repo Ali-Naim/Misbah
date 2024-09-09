@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <!-- Section 1: Personal Information -->
+            <div class="form-section" id="section1">
+                <h1>Personal Information</h1>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="fatherName">Father's Name:</label>
+                    <input type="text" id="fatherName" name="fatherName" required>
+                </div>
+                <div class="form-group">
+                    <label for="motherName">Mother's Name:</label>
+                    <input type="text" id="motherName" name="motherName" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="placeOfBirth">Place of Birth:</label>
+                    <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 1 (Continued): Additional Personal Information -->
+            <div class="form-section" id="section1-2">
+                <h1>Additional Personal Information</h1>
+                <div class="form-group">
+                    <label for="passportNumber">Passport Number:</label>
+                    <input type="text" id="passportNumber" name="passportNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfIssue">Date of Issue:</label>
+                    <input type="date" id="dateOfIssue" name="dateOfIssue" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="date" id="expiryDate" name="expiryDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="placeOfVisa">Place of Visa to be Issued:</label>
+                    <input type="text" id="placeOfVisa" name="placeOfVisa" required>
+                </div>
+                <div class="form-group">
+                    <label for="acceptanceType">Acceptance Type:</label>
+                    <input type="text" id="acceptanceType" name="acceptanceType" required>
+                </div>
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status:</label>
+                    <select id="maritalStatus" name="maritalStatus" required>
+                        <option value="">Select Status</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="homeNumber">Home Number:</label>
+                    <input type="text" id="homeNumber" name="homeNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="cellularNumber">Cellular Number:</label>
+                    <input type="text" id="cellularNumber" name="cellularNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneIran">Phone Number in Iran:</label>
+                    <input type="text" id="phoneIran" name="phoneIran" required>
+                </div>
+                <button type="button" onclick="previousSection()">Previous</button>
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 2: Study Field -->
+            <div class="form-section" id="section2">
+                <h1>Study Field - Diploma</h1>
+                <div class="form-group">
+                    <label for="diplomaMajor">Major:</label>
+                    <input type="text" id="diplomaMajor" name="diplomaMajor" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaStartDate">Start Date:</label>
+                    <input type="date" id="diplomaStartDate" name="diplomaStartDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaGraduateDate">Graduate Date:</label>
+                    <input type="date" id="diplomaGraduateDate" name="diplomaGraduateDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaDuration">Duration:</label>
+                    <input type="text" id="diplomaDuration" name="diplomaDuration" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaGPA">GPA:</label>
+                    <input type="text" id="diplomaGPA" name="diplomaGPA" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaSchool">School/University Name:</label>
+                    <input type="text" id="diplomaSchool" name="diplomaSchool" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaCity">City:</label>
+                    <input type="text" id="diplomaCity" name="diplomaCity" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplomaCountry">Country:</label>
+                    <input type="text" id="diplomaCountry" name="diplomaCountry" required>
+                </div>
+                <button type="button" onclick="previousSection()">Previous</button>
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 2 (Continued): Bachelor -->
+            <div class="form-section" id="section2-2">
+                <h1>Study Field - Bachelor</h1>
+                <div class="form-group">
+                    <label for="bachelorMajor">Major:</label>
+                    <input type="text" id="bachelorMajor" name="bachelorMajor" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorStartDate">Start Date:</label>
+                    <input type="date" id="bachelorStartDate" name="bachelorStartDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorGraduateDate">Graduate Date:</label>
+                    <input type="date" id="bachelorGraduateDate" name="bachelorGraduateDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorDuration">Duration:</label>
+                    <input type="text" id="bachelorDuration" name="bachelorDuration" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorGPA">GPA:</label>
+                    <input type="text" id="bachelorGPA" name="bachelorGPA" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorSchool">School/University Name:</label>
+                    <input type="text" id="bachelorSchool" name="bachelorSchool" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorCity">City:</label>
+                    <input type="text" id="bachelorCity" name="bachelorCity" required>
+                </div>
+                <div class="form-group">
+                    <label for="bachelorCountry">Country:</label>
+                    <input type="text" id="bachelorCountry" name="bachelorCountry" required>
+                </div>
+                <button type="button" onclick="previousSection()">Previous</button>
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 2 (Continued): Master -->
+            <div class="form-section" id="section2-3">
+                <h1>Study Field - Master</h1>
+                <div class="form-group">
+                    <label for="masterMajor">Major:</label>
+                    <input type="text" id="masterMajor" name="masterMajor" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterStartDate">Start Date:</label>
+                    <input type="date" id="masterStartDate" name="masterStartDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterGraduateDate">Graduate Date:</label>
+                    <input type="date" id="masterGraduateDate" name="masterGraduateDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterDuration">Duration:</label>
+                    <input type="text" id="masterDuration" name="masterDuration" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterGPA">GPA:</label>
+                    <input type="text" id="masterGPA" name="masterGPA" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterSchool">School/University Name:</label>
+                    <input type="text" id="masterSchool" name="masterSchool" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterCity">City:</label>
+                    <input type="text" id="masterCity" name="masterCity" required>
+                </div>
+                <div class="form-group">
+                    <label for="masterCountry">Country:</label>
+                    <input type="text" id="masterCountry" name="masterCountry" required>
+                </div>
+                <button type="button" onclick="previousSection()">Previous</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
